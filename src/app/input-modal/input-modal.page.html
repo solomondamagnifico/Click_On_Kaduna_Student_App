@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Fill in your details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  
+    <ion-label position="stacked">Please fill all field with the asterisk(<ion-text color="danger">*</ion-text>)</ion-label>
+  
+
+  <ion-item>
+      <ion-label position="stacked"[(ngModel)]="user.name">Full Name <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input required type="text"></ion-input>
+    </ion-item>
+    <br>
+
+    <ion-item>
+      <ion-label position="stacked">Stream<ion-text color="danger">*</ion-text></ion-label>
+      <ion-select placeholder="Select One">
+        <ion-select-option value="p/t">Programming & Tech</ion-select-option>
+        <ion-select-option value="d/m">Digital Marketing </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <br>
+    
+    <ion-item>
+        <ion-label position="stacked" [(ngModel)]="user.gender">Gender<ion-text color="danger">*</ion-text></ion-label>
+        <ion-select placeholder="Select One">
+          <ion-select-option value="f">Female</ion-select-option>
+          <ion-select-option value="m">Male</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <br>
+
+    <ion-item>
+      <ion-label position="stacked" [(ngModel)]="user.email">Email <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input required type="text"></ion-input>
+    </ion-item>
+    <br>
+
+
+
+    <ion-item>
+        <ion-label position="stacked" [(ngModel)]="user.about">About <ion-text color="danger">*</ion-text></ion-label>
+        <ion-textarea></ion-textarea>
+    </ion-item>
+    <br>
+
+ 
+    <ion-button expand="block" *ngIf="!userID" color="tertiary" (click)="save" >Add A Student</ion-button>
+    <ion-button expand="block" *ngIf="userID" color="tertiary" (click)="update" >Update</ion-button>
+    <ion-button expand="block" color="danger" (click)="closeModal()">Close</ion-button>
+
+</ion-content>
